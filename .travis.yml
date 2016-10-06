@@ -8,7 +8,7 @@ matrix:
       dotnet: 1.0.0-preview2-003131
       mono: none
       before_install:
-        - export LD_DEBUG=libs
+        - apt-get install -y libgdiplus
     - os: osx # OSX 10.11
       osx_image: xcode8
       dotnet: 1.0.0-preview2-003131
