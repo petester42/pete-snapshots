@@ -11,7 +11,9 @@ matrix:
       osx_image: xcode8
       dotnet: 1.0.0-preview2-003131
       mono: none
-      before_install: brew install openssl && brew link --force openssl
+      before_install: 
+        - ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/
+        - ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 install:
     - dotnet restore
 script:
