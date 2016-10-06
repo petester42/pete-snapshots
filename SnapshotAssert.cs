@@ -19,7 +19,7 @@ namespace AssertExtensions
 
             var imagesAreEqual = StructuralComparisons.StructuralEqualityComparer.Equals(actualBytes, expectedBytes);
 
-            Assert.Equal(actualBytes, expectedBytes);
+            Assert.True(imagesAreEqual);
         }
 
         private static byte[] ByteArray(this Image image)
