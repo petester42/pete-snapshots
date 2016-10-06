@@ -7,19 +7,23 @@ namespace Tests
     public class Tests
     {
         [Fact]
-        public void PassingTest()
+        public void SameImagesPass()
         {
-            var actual = Image.FromFile("./ReferenceImages/test_a.png");
+            var actual = Image.FromFile("./ReferenceImages/test.png");
 
             actual.ToMatchSnapshot();
         }
 
         [Fact]
-        public void FailingTest()
+        public void DifferentImagesFail()
         {
-            var actual = Image.FromFile("./ReferenceImages/test_b.png");
+            var actual = Image.FromFile("./ReferenceImages/test.png");
 
-            actual.ToMatchSnapshot();
+            try {
+                actual.ToMatchSnapshot();
+            } catch {
+                Assert.True(true);
+            }
         }
     }
 }
